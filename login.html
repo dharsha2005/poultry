@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+    </header>
+    
+    
+    <div class="container">
+        <h2>Admin Login</h2>
+        <input type="text" id="adminUsername" placeholder="Admin Username">
+        <input type="password" id="adminPassword" placeholder="Password">
+        <button class="btn" onclick="adminLogin()">Login</button>
+    </div>
+    <script>
+        function adminLogin() {
+            var username = document.getElementById('adminUsername').value;
+            var password = document.getElementById('adminPassword').value;
+            
+            if (username === "admin" && password === "admin123") {
+                localStorage.setItem("adminLoggedIn", true);
+                window.location.href = 'index.html';
+            } else {
+                document.getElementById('error-msg').style.display = 'block';
+            }
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+    </footer>
+</body>
+</html>
